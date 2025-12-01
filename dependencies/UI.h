@@ -264,7 +264,7 @@ void print_locality_menu(char *locality, char *category)
     FILE *menufile = fopen("./data_files/menudata.dat", "rb");
     while (fread(&itm, sizeof(ITEM), 1, menufile))
     {
-        if ((strcmp_ig_case(itm.category, category) == 0) && (strcmp_ig_case(itm.locality, locality) == 0) && (itm.veg = 1))
+        if ((strcmp_ig_case(itm.category, category) == 0) && (strcmp_ig_case(itm.locality, locality) == 0) && (itm.veg == 1))
         {
             showItemsMenuContentPrint(itm);
         }
@@ -280,7 +280,7 @@ void print_locality_menu(char *locality, char *category)
     menufile = fopen("./data_files/menudata.dat", "rb");
     while (fread(&itm, sizeof(ITEM), 1, menufile))
     {
-        if ((strcmp_ig_case(itm.category, category) == 0) && (strcmp_ig_case(itm.locality, locality) == 0) && (itm.veg = 0))
+        if ((strcmp_ig_case(itm.category, category) == 0) && (strcmp_ig_case(itm.locality, locality) == 0) && (itm.veg == 0))
         {
             showItemsMenuContentPrint(itm);
         }
@@ -1075,3 +1075,4 @@ void emp_served_guest(int ch)
     }
     fclose(billhisfile);
 }
+
